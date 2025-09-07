@@ -19,9 +19,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Calc Invest",
+  title: "CalcInvest",
   description:
-    "Calc Invest — sua maior companheira quando o assunto é previsibilidade de investimentos.",
+    "CalcInvest — sua maior companheira quando o assunto é previsibilidade de investimentos.",
   icons: {
     icon: "/icon.svg",
   },

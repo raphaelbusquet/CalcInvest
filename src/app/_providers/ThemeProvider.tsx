@@ -21,21 +21,18 @@ export function useTheme() {
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("light");
 
-  // Carregar preferências
   useEffect(() => {
     try {
       const saved = localStorage.getItem("theme");
       if (saved && (saved === "light" || saved === "dark")) {
         setTheme(saved);
       } else {
-        // Detectar preferência do sistema
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
         setTheme(prefersDark ? "dark" : "light");
       }
     } catch {}
   }, []);
 
-  // Persistir preferências e aplicar tema
   useEffect(() => {
     try {
       localStorage.setItem("theme", theme);

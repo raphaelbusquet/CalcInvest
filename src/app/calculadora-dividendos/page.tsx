@@ -33,7 +33,6 @@ export default function CalculadoraDividendosPage() {
       return null;
     }
 
-    // Calcular renda anual desejada baseado na frequência
     let rendaAnualDesejada: number;
     switch (frequencia) {
       case "mensal":
@@ -50,28 +49,21 @@ export default function CalculadoraDividendosPage() {
         break;
     }
 
-    // Se incluir imposto, calcular renda bruta necessária
     let rendaAnualBruta: number;
     if (incluirImposto && !Number.isNaN(impostoNum)) {
-      // Fórmula: Renda Bruta = Renda Líquida / (1 - Alíquota/100)
       rendaAnualBruta = rendaAnualDesejada / (1 - impostoNum / 100);
     } else {
       rendaAnualBruta = rendaAnualDesejada;
     }
 
-    // Calcular capital necessário usando yield anual
     const capitalNecessario = rendaAnualBruta / (yieldNum / 100);
 
-    // Calcular número de cotas
     const numeroCotas = Math.ceil(capitalNecessario / precoNum);
 
-    // Calcular valor total do investimento
     const valorTotalInvestimento = numeroCotas * precoNum;
 
-    // Calcular dividendos anuais que serão recebidos
     const dividendosAnuaisRecebidos = (valorTotalInvestimento * yieldNum) / 100;
 
-    // Calcular dividendos líquidos (após imposto)
     let dividendosLiquidosAnuais: number;
     if (incluirImposto && !Number.isNaN(impostoNum)) {
       dividendosLiquidosAnuais = dividendosAnuaisRecebidos * (1 - impostoNum / 100);

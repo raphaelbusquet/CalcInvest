@@ -5,7 +5,7 @@ export default function Home() {
     <div className="container">
       <div className="stack" style={{ gap: 20 }}>
         <header className="stack" style={{ gap: 8 }}>
-          <h2>Calc Invest. Sua melhor companheira quando o assunto é previsibilidade de investimentos.</h2>
+          <h2>CalcInvest. Sua melhor companheira quando o assunto é previsibilidade de investimentos.</h2>
           <p className="muted">
             Um espaço simples e direto para calcular cenários
             de investimentos e entender o seu perfil de risco. Explore as ferramentas

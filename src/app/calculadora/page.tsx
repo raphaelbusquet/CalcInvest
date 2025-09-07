@@ -48,10 +48,9 @@ export default function CalculadoraPage() {
 
     const taxaNominal = taxaAnualNum / 100;
     const inflacaoNominal = descontarInflacao ? inflacaoAnualNum / 100 : 0;
-    // taxa real aproximada: (1+taxa)/(1+inf)-1
     const taxaReal = (1 + taxaNominal) / (1 + inflacaoNominal) - 1;
-    const r = (descontarInflacao ? taxaReal : taxaNominal) / 12; // taxa mensal efetiva utilizada
-    const n = anosNum * 12; // meses
+    const r = (descontarInflacao ? taxaReal : taxaNominal) / 12;
+    const n = anosNum * 12;
     const fvInicial = aporteInicialNum * Math.pow(1 + r, n);
     const fvAportes = aporteMensalNum * (((Math.pow(1 + r, n) - 1) / r) * (1 + r));
     const total = fvInicial + fvAportes;

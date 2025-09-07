@@ -123,7 +123,6 @@ function scoreProfile(answers: OptionKey[]) {
     { a: 0, b: 0, c: 0 } as Record<OptionKey, number>
   );
 
-  // Regra simples baseada na planilha típica: a → agressivo, b → moderado, c → conservador
   const max = Math.max(counts.a, counts.b, counts.c);
   const winner = (Object.keys(counts) as OptionKey[]).find(
     (k) => counts[k] === max

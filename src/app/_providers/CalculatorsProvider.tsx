@@ -72,7 +72,6 @@ export function useCalculators() {
 }
 
 export function CalculatorsProvider({ children }: { children: React.ReactNode }) {
-  // Persistência apenas em memória: manter entre navegações mas resetar no reload
   const [investment, setInvestment] = useState<InvestmentCalculatorState>(defaultInvestment);
   const [dividends, setDividends] = useState<DividendsCalculatorState>(defaultDividends);
   const [quiz, setQuiz] = useState<QuizState>(defaultQuiz);
